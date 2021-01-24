@@ -1,3 +1,6 @@
+//variable
+$blanco: white;
+
 body {
   margin: 0;
   font-family: 'Muli', sans-serif;
@@ -8,11 +11,18 @@ body {
     display: none;
 } */
 
-.header {
+//herencia
+.flex {
   display: flex;
   align-items: center;
+}
+
+.header {
+  @extend .flex;
+  // display: flex;
+  // align-items: center;
   background-color: #8f57fd;
-  color: white;
+  color: $blanco;
   height: 100px;
   justify-content: space-between;
   top: 0px;
@@ -28,9 +38,15 @@ body {
   margin-right: 30px;
 }
 
-.header__menu ul {
+//mixin
+@mixin display {
   display: none;
   list-style: none;
+}
+.header__menu ul {
+  @include display;
+  // display: none;
+  // list-style: none;
   margin: 0px 0px 0px -14px;
   padding: 0px;
   position: absolute;
@@ -47,7 +63,7 @@ body {
 }
 
 .header__menu li a {
-  color: white;
+  color: $blanco;
   text-decoration: none;
 }
 
@@ -76,12 +92,12 @@ body {
 }
 
 .main__title {
-  color: white;
+  color: $blanco;
   font-size: 25px;
 }
 
 .categories__title {
-  color: white;
+  color: $blanco;
   font-size: 16px;
   position: absolute;
   padding-left: 30px;
@@ -168,30 +184,29 @@ body {
 }
 
 .carousel-item__details--title {
-  color: white;
+  color: $blanco;
   margin: 5px 0px 0px 0px;
 }
 
 .carousel-item__details--subtitle {
-  color: white;
+  color: $blanco;
   font-size: 8px;
   margin: 3px 0px;
 }
-
+// anidamiento
 .footer {
   align-items: center;
   background-color: #8f57fd;
   display: flex;
   height: 100px;
   width: 100%;
-}
-
-.footer a {
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  padding-left: 30px;
-  text-decoration: none;
+  a {
+    color: $blanco;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+  }
 }
 
 .footer a:hover {
@@ -200,9 +215,9 @@ body {
 
 .input {
   background-color: rgba(255,255,255,0.1);
-  border: 2px solid white;
+  border: 2px solid $blanco;
   border-radius: 25px;
-  color: white;
+  color: $blanco;
   font-family: 'Muli', sans-serif;
   font-size: 16px;
   height: 50px;
@@ -213,7 +228,7 @@ body {
 }
 
 ::placeholder {
-  color: white;
+  color: $blanco;
 }
 
 @media only screen and (max-width: 600px) {
